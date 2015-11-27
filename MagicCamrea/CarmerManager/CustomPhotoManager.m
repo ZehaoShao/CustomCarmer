@@ -207,17 +207,23 @@
         switch (FlashLightState) {
             case KFlashLightOpen:
                 [current_camera lockForConfiguration:nil];
-                [current_camera setFlashMode:AVCaptureFlashModeOn]; //闪光灯打开
+                if ([current_camera isFlashModeSupported:AVCaptureFlashModeOn]) {
+                     [current_camera setFlashMode:AVCaptureFlashModeOn]; //闪光灯打开
+                }
                 [current_camera unlockForConfiguration];
                 break;
             case KFlashLightOff:
                 [current_camera lockForConfiguration:nil];
-                [current_camera setFlashMode:AVCaptureFlashModeOff];//闪光灯关闭
+                if ([current_camera isFlashModeSupported:AVCaptureFlashModeOff]) {
+                    [current_camera setFlashMode:AVCaptureFlashModeOff]; //闪光灯打开
+                }
                 [current_camera unlockForConfiguration];
                 break;
             case KFlashLightAuto:
                 [current_camera lockForConfiguration:nil];
-                [current_camera setFlashMode:AVCaptureFlashModeAuto];//闪光灯自动
+                if ([current_camera isFlashModeSupported:AVCaptureFlashModeAuto]) {
+                    [current_camera setFlashMode:AVCaptureFlashModeAuto]; //闪光灯打开
+                }
                 [current_camera unlockForConfiguration];
                 break;
             default:

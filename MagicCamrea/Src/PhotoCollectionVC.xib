@@ -20,15 +20,50 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONb-ML-8ri">
-                    <rect key="frame" x="0.0" y="40" width="320" height="366"/>
+                    <rect key="frame" x="0.0" y="60" width="320" height="346"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyK-jL-F4Q">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <subviews>
+                        <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3M-ut-yFW">
+                            <rect key="frame" x="13" y="5" width="46" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="re5-1j-P7l"/>
+                            </constraints>
+                            <state key="normal" title="闪光灯"/>
+                            <connections>
+                                <action selector="BtnClick:" destination="-1" eventType="touchUpInside" id="bfQ-1C-Prr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PzC-4f-8Hj">
+                            <rect key="frame" x="259" y="15" width="46" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="QLF-PK-sxO"/>
+                            </constraints>
+                            <state key="normal" title="转换"/>
+                            <connections>
+                                <action selector="BtnClick:" destination="-1" eventType="touchUpInside" id="fuh-uh-tkX"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="ksf-cy-Wvf"/>
+                        <constraint firstItem="Q3M-ut-yFW" firstAttribute="leading" secondItem="qyK-jL-F4Q" secondAttribute="leading" constant="13" id="Fge-dD-1L5"/>
+                        <constraint firstItem="PzC-4f-8Hj" firstAttribute="top" secondItem="qyK-jL-F4Q" secondAttribute="top" constant="5" id="M8C-ul-8zD"/>
+                        <constraint firstItem="Q3M-ut-yFW" firstAttribute="top" secondItem="qyK-jL-F4Q" secondAttribute="top" constant="5" id="Qns-Nq-vYB"/>
+                        <constraint firstAttribute="height" constant="60" id="ksf-cy-Wvf"/>
+                        <constraint firstAttribute="bottom" secondItem="PzC-4f-8Hj" secondAttribute="bottom" constant="2" id="oNq-2a-R1E"/>
+                        <constraint firstAttribute="trailing" secondItem="PzC-4f-8Hj" secondAttribute="trailing" constant="15" id="v8t-tD-3Nu"/>
+                        <constraint firstAttribute="bottom" secondItem="Q3M-ut-yFW" secondAttribute="bottom" constant="5" id="w6D-KY-M7z"/>
+                        <constraint firstItem="PzC-4f-8Hj" firstAttribute="centerY" secondItem="qyK-jL-F4Q" secondAttribute="centerY" id="yQp-kX-EmU"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="M8C-ul-8zD"/>
+                            <exclude reference="oNq-2a-R1E"/>
+                        </mask>
+                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-K5-8BU">
                     <rect key="frame" x="0.0" y="406" width="320" height="162"/>
@@ -112,7 +147,7 @@
                 <constraint firstAttribute="trailing" secondItem="ONb-ML-8ri" secondAttribute="trailing" id="GcG-aB-eAN"/>
                 <constraint firstAttribute="bottom" secondItem="q0O-K5-8BU" secondAttribute="bottom" id="I8a-CM-c5q"/>
                 <constraint firstAttribute="trailing" secondItem="q0O-K5-8BU" secondAttribute="trailing" id="JH9-dn-d3U"/>
-                <constraint firstItem="ONb-ML-8ri" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="Q4Y-9H-gLx"/>
+                <constraint firstItem="ONb-ML-8ri" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="Q4Y-9H-gLx"/>
                 <constraint firstAttribute="trailing" secondItem="ONb-ML-8ri" secondAttribute="trailing" id="RLB-yc-5EL"/>
                 <constraint firstItem="qyK-jL-F4Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Smg-1S-KAG"/>
                 <constraint firstAttribute="bottom" secondItem="ONb-ML-8ri" secondAttribute="bottom" constant="162" id="oM7-Sg-376"/>

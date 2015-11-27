@@ -52,8 +52,16 @@
         case 1001:
             [_photoManager takePhoto];
             break;
-        case 1002:
-        {
+        case 1002:{
+        }
+        case 1004:{   //转换摄像头
+            [_photoManager switchCamera];
+        }
+        case 1005:{   //闪光灯
+         //   KFlashLightOpen,//开启
+         //   KFlashLightAuto,//自动
+         //   KNoFlashLight//不可用
+            [_photoManager setFlashLightState:KFlashLightAuto];
         }
             break;
         default:
