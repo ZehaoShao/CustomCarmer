@@ -248,14 +248,14 @@
 -(void)setFlashModeState:(enum KFlashModeState)FlashModeState{
     AVCaptureDevice *current_camera=[self cameraWithPosition:[[_videoInput device] position]];
     switch (FlashModeState) {
-        case KFlashModeLock:
+        case KFlashFocusLock:
              [current_camera lockForConfiguration:nil];
             if ([current_camera isFocusModeSupported:AVCaptureFocusModeLocked]) {
                 [current_camera setFocusMode:AVCaptureFocusModeLocked];
             }
             [current_camera unlockForConfiguration];
             break;
-       case KFlashModeAuto:
+       case KFlashFocusAuto:
             [current_camera lockForConfiguration:nil];
             if ([current_camera isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
                 [current_camera setFocusMode:AVCaptureFocusModeAutoFocus];
@@ -263,7 +263,7 @@
             [current_camera unlockForConfiguration];
             break;
             
-        case KFlashModeContinusAuto:
+        case KFlashFocusContinusAuto:
             [current_camera lockForConfiguration:nil];
             if ([current_camera isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus]) {
                 [current_camera setFocusMode:AVCaptureFocusModeContinuousAutoFocus];

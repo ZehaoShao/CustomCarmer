@@ -69,9 +69,9 @@
                     <rect key="frame" x="0.0" y="406" width="320" height="162"/>
                     <subviews>
                         <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw5-ox-7U5">
-                            <rect key="frame" x="55" y="62" width="42" height="38"/>
+                            <rect key="frame" x="15" y="62" width="42" height="38"/>
                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                            <state key="normal" title="返回">
+                            <state key="normal" title="聚焦">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -135,7 +135,7 @@
                         <constraint firstAttribute="trailing" secondItem="pTc-dr-Kl8" secondAttribute="trailing" constant="55" id="Ob0-eI-klc"/>
                         <constraint firstAttribute="height" constant="162" id="QaG-Qb-1Q7"/>
                         <constraint firstItem="h5f-nY-ySi" firstAttribute="top" secondItem="q0O-K5-8BU" secondAttribute="top" constant="60" id="XK6-zb-UPs"/>
-                        <constraint firstItem="Yw5-ox-7U5" firstAttribute="leading" secondItem="q0O-K5-8BU" secondAttribute="leading" constant="55" id="Ygt-wP-zPF"/>
+                        <constraint firstItem="Yw5-ox-7U5" firstAttribute="leading" secondItem="q0O-K5-8BU" secondAttribute="leading" constant="15" id="Ygt-wP-zPF"/>
                         <constraint firstAttribute="centerX" secondItem="dB3-0y-d2V" secondAttribute="centerX" id="hal-bj-9g4"/>
                     </constraints>
                 </view>

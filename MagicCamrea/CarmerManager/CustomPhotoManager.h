@@ -19,9 +19,9 @@ enum KFlashLightState{
 
 //闪光灯
 enum KFlashModeState{
-    KFlashModeLock=0,//锁定
-    KFlashModeAuto,//自动
-    KFlashModeContinusAuto,//自动
+    KFlashFocusLock=0,//锁定
+    KFlashFocusAuto,//自动
+    KFlashFocusContinusAuto,//自动
 };
 
 
