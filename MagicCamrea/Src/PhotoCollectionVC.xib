@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -11,7 +11,6 @@
                 <outlet property="mCountBtn" destination="pTc-dr-Kl8" id="ZQU-NS-c2r"/>
                 <outlet property="mCountLable" destination="h5f-nY-ySi" id="VK5-Qp-zOb"/>
                 <outlet property="mPhotoView" destination="ONb-ML-8ri" id="jGZ-M9-6ER"/>
-                <outlet property="mRightPhotoView" destination="Jhl-q5-VE2" id="aIo-cL-BqC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONb-ML-8ri">
-                    <rect key="frame" x="0.0" y="40" width="160" height="366"/>
+                    <rect key="frame" x="0.0" y="40" width="320" height="366"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyK-jL-F4Q">
@@ -105,28 +104,20 @@
                         <constraint firstAttribute="centerX" secondItem="dB3-0y-d2V" secondAttribute="centerX" id="hal-bj-9g4"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jhl-q5-VE2" userLabel="rightPhotoView">
-                    <rect key="frame" x="160" y="40" width="160" height="366"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="ONb-ML-8ri" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="81D-kR-ZiG"/>
-                <constraint firstAttribute="trailing" secondItem="Jhl-q5-VE2" secondAttribute="trailing" id="81c-Cm-I36"/>
-                <constraint firstItem="Jhl-q5-VE2" firstAttribute="leading" secondItem="ONb-ML-8ri" secondAttribute="trailing" id="9L9-pG-iaB"/>
                 <constraint firstAttribute="trailing" secondItem="qyK-jL-F4Q" secondAttribute="trailing" id="GD9-sh-xIn"/>
+                <constraint firstAttribute="trailing" secondItem="ONb-ML-8ri" secondAttribute="trailing" id="GcG-aB-eAN"/>
                 <constraint firstAttribute="bottom" secondItem="q0O-K5-8BU" secondAttribute="bottom" id="I8a-CM-c5q"/>
                 <constraint firstAttribute="trailing" secondItem="q0O-K5-8BU" secondAttribute="trailing" id="JH9-dn-d3U"/>
                 <constraint firstItem="ONb-ML-8ri" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="Q4Y-9H-gLx"/>
                 <constraint firstAttribute="trailing" secondItem="ONb-ML-8ri" secondAttribute="trailing" id="RLB-yc-5EL"/>
                 <constraint firstItem="qyK-jL-F4Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Smg-1S-KAG"/>
-                <constraint firstItem="ONb-ML-8ri" firstAttribute="height" secondItem="Jhl-q5-VE2" secondAttribute="height" id="X4G-X1-bLA"/>
                 <constraint firstAttribute="bottom" secondItem="ONb-ML-8ri" secondAttribute="bottom" constant="162" id="oM7-Sg-376"/>
                 <constraint firstItem="qyK-jL-F4Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tkz-ze-hzb"/>
-                <constraint firstItem="Jhl-q5-VE2" firstAttribute="top" secondItem="qyK-jL-F4Q" secondAttribute="bottom" id="yeM-fR-pBv"/>
                 <constraint firstItem="q0O-K5-8BU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yw6-Hk-BLb"/>
-                <constraint firstItem="ONb-ML-8ri" firstAttribute="width" secondItem="Jhl-q5-VE2" secondAttribute="width" id="zOf-6J-Teu"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">

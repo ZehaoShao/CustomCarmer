@@ -8,7 +8,6 @@
 
 #import "PhotoCollectionVC.h"
 #import "CustomPhotoManager.h"
-#import "PhotoManagerRight.h"
 @interface PhotoCollectionVC ()
 {
     CustomPhotoManager *_photoManager;
