@@ -9,6 +9,9 @@
 #import "CustomPhotoManager.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <CoreMotion/CoreMotion.h>
+
+
 #define kDeviceWidth                [UIScreen mainScreen].bounds.size.width
 #define kDeviceHeight               [UIScreen mainScreen].bounds.size.height
 
@@ -16,6 +19,7 @@
 {
     AVCaptureDevice *_frontCamera;//前置摄像头
     AVCaptureDevice *_backCamera;//后置摄像头
+     AVCaptureVideoOrientation _Orientation; //用于确定图片的方向（基于重力感应）
 }
 @property (nonatomic,strong)        AVCaptureSession * session;
 //AVCaptureSession对象来执行输入设备和输出设备之间的数据传递
@@ -26,7 +30,9 @@
 @property (nonatomic, strong)       AVCaptureVideoPreviewLayer  * previewLayer;
 @property (nonatomic, strong)       UIImage  * image;
 @property (nonatomic, strong)       NSMutableArray  * mImagesArrary;
-@property (nonatomic, assign)       BOOL   isRight;
+
+
+@property (nonatomic, strong) CMMotionManager * motionManager;
 @end
 
 @implementation CustomPhotoManager
@@ -131,6 +137,12 @@
         NSLog(@"take photo failed!");
         return;
     }
+    if ([videoConnection isVideoOrientationSupported])  //用于确定自定义图片的方向
+    {
+        if (_Orientation) {
+            [videoConnection setVideoOrientation:_Orientation];
+        }
+    }
     
     [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
         if (imageDataSampleBuffer == NULL) {
@@ -231,6 +243,44 @@
         }
     }
 }
+
+
+-(void)setFlashModeState:(enum KFlashModeState)FlashModeState{
+    AVCaptureDevice *current_camera=[self cameraWithPosition:[[_videoInput device] position]];
+    switch (FlashModeState) {
+        case KFlashModeLock:
+             [current_camera lockForConfiguration:nil];
+            if ([current_camera isFocusModeSupported:AVCaptureFocusModeLocked]) {
+                [current_camera setFocusMode:AVCaptureFocusModeLocked];
+            }
+            [current_camera unlockForConfiguration];
+            break;
+       case KFlashModeAuto:
+            [current_camera lockForConfiguration:nil];
+            if ([current_camera isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+                [current_camera setFocusMode:AVCaptureFocusModeAutoFocus];
+            }
+            [current_camera unlockForConfiguration];
+            break;
+            
+        case KFlashModeContinusAuto:
+            [current_camera lockForConfiguration:nil];
+            if ([current_camera isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus]) {
+                [current_camera setFocusMode:AVCaptureFocusModeContinuousAutoFocus];
+            }
+            [current_camera unlockForConfiguration];
+            break;
+        default:
+            break;
+    }
+    
+}
+
+
+
+
+
+
 //停止
 - (void)StopTakePhoto{
     if (_session) {
@@ -251,6 +301,58 @@
         
     }];
 }
+
+
+#pragma mark -- 用于判断屏幕的方向~ ~
+- (void)startMotionManager{
+    if (_motionManager == nil) {
+        _motionManager = [[CMMotionManager alloc] init];
+    }
+    _motionManager.deviceMotionUpdateInterval = 1/15.0;
+    if (_motionManager.deviceMotionAvailable) {
+        NSLog(@"Device Motion Available");
+        [_motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
+                                            withHandler: ^(CMDeviceMotion *motion, NSError *error){
+                                                [self performSelectorOnMainThread:@selector(handleDeviceMotion:) withObject:motion waitUntilDone:YES];
+                                            }];
+    } else {
+        NSLog(@"No device motion on device.");
+        [self setMotionManager:nil];
+    }
+}
+
+
+- (void)handleDeviceMotion:(CMDeviceMotion *)deviceMotion{
+    double x = deviceMotion.gravity.x;
+    double y = deviceMotion.gravity.y;
+    if (fabs(y) >= fabs(x))
+    {
+        if (y >= 0){
+            // UIDeviceOrientationPortraitUpsideDown;
+            _Orientation = AVCaptureVideoOrientationPortraitUpsideDown;
+        }
+        else{
+            // UIDeviceOrientationPortrait;
+            _Orientation = AVCaptureVideoOrientationPortrait;
+        }
+    }
+    else
+    {
+        if (x >= 0){
+            // UIDeviceOrientationLandscapeRight;
+            _Orientation = AVCaptureVideoOrientationLandscapeLeft;
+        }
+        else{
+            // UIDeviceOrientationLandscapeLeft;
+            _Orientation = AVCaptureVideoOrientationLandscapeRight;
+        }
+    }
+}
+
+
+
+
+
 
 // 滤镜
 /**

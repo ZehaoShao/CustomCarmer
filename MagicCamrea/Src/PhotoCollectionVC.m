@@ -48,6 +48,7 @@
     switch (sender.tag) {
         case 1000:
             //[self.navigationController popViewControllerAnimated:YES];
+            [_photoManager setFlashModeState:KFlashModeAuto];
             break;
         case 1001:
             [_photoManager takePhoto];

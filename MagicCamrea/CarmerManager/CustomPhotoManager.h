@@ -17,17 +17,30 @@ enum KFlashLightState{
     KNoFlashLight//不可用
 };
 
+//闪光灯
+enum KFlashModeState{
+    KFlashModeLock=0,//锁定
+    KFlashModeAuto,//自动
+    KFlashModeContinusAuto,//自动
+};
 
 
 @interface CustomPhotoManager : NSObject
 @property (nonatomic,assign) enum KFlashLightState flashLightState;
 
-//+ (CustomPhotoManager *)sharedInstance;
--(void)initializeCameraWithPreview:(UIView *)preview;
 //初始化AVCaptureSession
+-(void)initializeCameraWithPreview:(UIView *)preview;
+
+//闪光灯设置
 -(void)setFlashLightState:(enum KFlashLightState)FlashLightState;
+
+//焦点设置
+-(void)setFlashModeState:(enum KFlashModeState)FlashModeState;
+
+
 //转换前后摄像头
 -(void)switchCamera;
+
 //拍照
 -(void)takePhoto;
 
