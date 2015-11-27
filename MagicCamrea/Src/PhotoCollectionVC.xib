@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoCollectionVC">
+            <connections>
+                <outlet property="mCountBtn" destination="pTc-dr-Kl8" id="ZQU-NS-c2r"/>
+                <outlet property="mCountLable" destination="h5f-nY-ySi" id="VK5-Qp-zOb"/>
+                <outlet property="mPhotoView" destination="ONb-ML-8ri" id="jGZ-M9-6ER"/>
+                <outlet property="mRightPhotoView" destination="Jhl-q5-VE2" id="aIo-cL-BqC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONb-ML-8ri">
+                    <rect key="frame" x="0.0" y="40" width="160" height="366"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyK-jL-F4Q">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ksf-cy-Wvf"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0O-K5-8BU">
+                    <rect key="frame" x="0.0" y="406" width="320" height="162"/>
+                    <subviews>
+                        <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw5-ox-7U5">
+                            <rect key="frame" x="55" y="62" width="42" height="38"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <state key="normal" title="返回">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="BtnClick:" destination="-1" eventType="touchUpInside" id="Gjf-SR-pik"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTc-dr-Kl8">
+                            <rect key="frame" x="223" y="62" width="42" height="38"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <state key="normal" title="完成">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="BtnClick:" destination="-1" eventType="touchUpInside" id="tde-uY-VoK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB3-0y-d2V">
+                            <rect key="frame" x="118" y="39" width="85" height="85"/>
+                            <state key="normal" image="拍照按钮_正常">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="BtnClick:" destination="-1" eventType="touchUpInside" id="6eh-1E-b1c"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5f-nY-ySi">
+                            <rect key="frame" x="209" y="60" width="21" height="21"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="19" id="8NR-j5-nc2"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="19" id="IW8-Na-17A"/>
+                                <constraint firstAttribute="height" constant="19" id="aIf-7n-kWQ"/>
+                                <constraint firstAttribute="width" secondItem="h5f-nY-ySi" secondAttribute="height" multiplier="1:1" id="kKd-fd-feS"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="ly2-bI-GQ4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="0.40000000000000002" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <real key="value" value="9.5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="8NR-j5-nc2"/>
+                                    <exclude reference="aIf-7n-kWQ"/>
+                                </mask>
+                            </variation>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="Yw5-ox-7U5" secondAttribute="centerY" id="2Ms-Oe-VPY"/>
+                        <constraint firstAttribute="trailing" secondItem="h5f-nY-ySi" secondAttribute="trailing" constant="90" id="4EU-O2-hjp"/>
+                        <constraint firstAttribute="centerY" secondItem="dB3-0y-d2V" secondAttribute="centerY" id="EeX-RK-LOD"/>
+                        <constraint firstAttribute="centerY" secondItem="pTc-dr-Kl8" secondAttribute="centerY" id="K6O-e3-DCW"/>
+                        <constraint firstAttribute="trailing" secondItem="pTc-dr-Kl8" secondAttribute="trailing" constant="55" id="Ob0-eI-klc"/>
+                        <constraint firstAttribute="height" constant="162" id="QaG-Qb-1Q7"/>
+                        <constraint firstItem="h5f-nY-ySi" firstAttribute="top" secondItem="q0O-K5-8BU" secondAttribute="top" constant="60" id="XK6-zb-UPs"/>
+                        <constraint firstItem="Yw5-ox-7U5" firstAttribute="leading" secondItem="q0O-K5-8BU" secondAttribute="leading" constant="55" id="Ygt-wP-zPF"/>
+                        <constraint firstAttribute="centerX" secondItem="dB3-0y-d2V" secondAttribute="centerX" id="hal-bj-9g4"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jhl-q5-VE2" userLabel="rightPhotoView">
+                    <rect key="frame" x="160" y="40" width="160" height="366"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ONb-ML-8ri" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="81D-kR-ZiG"/>
+                <constraint firstAttribute="trailing" secondItem="Jhl-q5-VE2" secondAttribute="trailing" id="81c-Cm-I36"/>
+                <constraint firstItem="Jhl-q5-VE2" firstAttribute="leading" secondItem="ONb-ML-8ri" secondAttribute="trailing" id="9L9-pG-iaB"/>
+                <constraint firstAttribute="trailing" secondItem="qyK-jL-F4Q" secondAttribute="trailing" id="GD9-sh-xIn"/>
+                <constraint firstAttribute="bottom" secondItem="q0O-K5-8BU" secondAttribute="bottom" id="I8a-CM-c5q"/>
+                <constraint firstAttribute="trailing" secondItem="q0O-K5-8BU" secondAttribute="trailing" id="JH9-dn-d3U"/>
+                <constraint firstItem="ONb-ML-8ri" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="Q4Y-9H-gLx"/>
+                <constraint firstAttribute="trailing" secondItem="ONb-ML-8ri" secondAttribute="trailing" id="RLB-yc-5EL"/>
+                <constraint firstItem="qyK-jL-F4Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Smg-1S-KAG"/>
+                <constraint firstItem="ONb-ML-8ri" firstAttribute="height" secondItem="Jhl-q5-VE2" secondAttribute="height" id="X4G-X1-bLA"/>
+                <constraint firstAttribute="bottom" secondItem="ONb-ML-8ri" secondAttribute="bottom" constant="162" id="oM7-Sg-376"/>
+                <constraint firstItem="qyK-jL-F4Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tkz-ze-hzb"/>
+                <constraint firstItem="Jhl-q5-VE2" firstAttribute="top" secondItem="qyK-jL-F4Q" secondAttribute="bottom" id="yeM-fR-pBv"/>
+                <constraint firstItem="q0O-K5-8BU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yw6-Hk-BLb"/>
+                <constraint firstItem="ONb-ML-8ri" firstAttribute="width" secondItem="Jhl-q5-VE2" secondAttribute="width" id="zOf-6J-Teu"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="RLB-yc-5EL"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="拍照按钮_正常" width="85" height="85"/>
+    </resources>
+</document>
