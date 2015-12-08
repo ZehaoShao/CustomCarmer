@@ -7,10 +7,13 @@
 //
 
 #import "PhotoCollectionVC.h"
-#import "CustomPhotoManager.h"
+//#import "CustomPhotoManager.h"
+#import "MagicCamrea-Swift.h"
+
 @interface PhotoCollectionVC ()
 {
-    CustomPhotoManager *_photoManager;
+  //  CustomPhotoManager *_photoManager;
+    CustomPhotoManagerSwift * _photoManager;
 }
 @property (weak, nonatomic) IBOutlet UIView *mPhotoView;
 @property (weak, nonatomic) IBOutlet UIView *mRightPhotoView;
@@ -36,7 +39,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-     _photoManager = [[CustomPhotoManager alloc] init];
+  //   _photoManager = [[CustomPhotoManager alloc] init];
+    _photoManager = [[CustomPhotoManagerSwift alloc]init ];
     [_photoManager initializeCameraWithPreview:self.mPhotoView ];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changePhotosCount) name:@"ChangePhotosCount" object:nil ];
 }
@@ -47,8 +51,8 @@
 - (IBAction)BtnClick:(UIButton *)sender {
     switch (sender.tag) {
         case 1000:
-            //[self.navigationController popViewControllerAnimated:YES];
-            [_photoManager setFlashModeState:KFlashFocusAuto];
+            //[self.navigationController popViewControllerAnimated:YES]
+          //  [_photoManager setFlashModeState:KFlashFocusAuto];
             break;
         case 1001:
             [_photoManager takePhoto];
@@ -62,7 +66,7 @@
          //   KFlashLightOpen,//开启
          //   KFlashLightAuto,//自动
          //   KNoFlashLight//不可用
-            [_photoManager setFlashLightState:KFlashLightAuto];
+         //   [_photoManager setFlashLightState:KFlashLightAuto];
         }
             break;
         default:
@@ -70,7 +74,7 @@
     }
 }
 -(void)changePhotosCount{
-    self.mCountLable.text = [NSString stringWithFormat:@"%lu",(unsigned long)[[_photoManager getImagesArrary]count ] ];
+   // self.mCountLable.text = [NSString stringWithFormat:@"%lu",(unsigned long)[[_photoManager getImagesArrary]count ] ];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

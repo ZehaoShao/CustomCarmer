@@ -90,7 +90,7 @@
                                 <action selector="BtnClick:" destination="-1" eventType="touchUpInside" id="tde-uY-VoK"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB3-0y-d2V">
+                        <button opaque="NO" tag="1001" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dB3-0y-d2V">
                             <rect key="frame" x="118" y="39" width="85" height="85"/>
                             <state key="normal" image="拍照按钮_正常">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
